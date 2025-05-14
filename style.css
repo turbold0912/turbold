@@ -1,0 +1,363 @@
+/* Үндсэн стайл */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+    --border-color: #ddd;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Хэрэглэгчийн хэсэгт харагдах СV */
+header {
+    position: relative;
+    padding: 30px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.admin-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.admin-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.profile-info h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+}
+
+main {
+    padding: 30px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.education-item, .experience-item {
+    margin-bottom: 25px;
+}
+
+.education-item h3, .experience-item h3 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.education-item .date, .experience-item .date {
+    color: var(--primary-color);
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.company {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skill-item {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.skill-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Нэвтрэх хэсэг */
+#login-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Админ удирдлагын хэсэг */
+#admin-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.admin-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.admin-container h2 {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logout-btn {
+    background-color: var(--error-color);
+    padding: 8px 15px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.edit-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+}
+
+.edit-section h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.edit-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.edit-section input, .edit-section textarea {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#add-education, #add-experience, #add-skill {
+    margin-top: 15px;
+    background-color: var(--secondary-color);
+}
+
+.education-edit-item, .experience-edit-item, .skill-edit-item {
+    padding: 15px;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#save-all {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: var(--success-color);
+    font-size: 18px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contact-info {
+        justify-content: center;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Программист Хөгжүүлэгчийн CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/reset.js"></script>
+</head>
+<body>
+    <div id="login-section" class="hidden">
+        <div class="login-container">
+            <h2>Админ хэсэгт нэвтрэх</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Хэрэглэгчийн нэр" required>
+                <input type="password" id="password" placeholder="Нууц үг" required>
+                <button type="submit">Нэвтрэх</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="admin-panel" class="hidden">
+        <div class="admin-container">
+            <h2>Админ удирдлага</h2>
+            <button id="logout-btn" type="button" onclick="document.getElementById('admin-panel').classList.add('hidden'); document.getElementById('admin-panel').style.display='none';">Гарах</button>
+            
+            <div class="edit-section">
+                <h3>Профайл зураг</h3>
+                <input type="file" id="profile-image-upload" accept="image/*">
+                <button id="save-image">Хадгалах</button>
+            </div>
+            
+            <div class="edit-section">
+                <h3>Хувийн мэдээлэл</h3>
+                <label for="edit-name">Нэр:</label>
+                <input type="text" id="edit-name">
+                
+                <label for="edit-title">Мэргэжил:</label>
+                <input type="text" id="edit-title">
+                
+                <label for="edit-email">Имэйл:</label>
+                <input type="text" id="edit-email">
+                
+                <label for="edit-phone">Утас:</label>
+                <input type="text" id="edit-phone">
+                
+                <label for="edit-address">Хаяг:</label>
+                <input type="text" id="edit-address">
+            </div>
+            
+            <div class="edit-section">
+                <h3>Тухай мэдээлэл</h3>
+                <textarea id="edit-about" rows="5"></textarea>
+            </div>
+            
+            <div class="edit-section">
+                <h3>Боловсрол</h3>
+                <div id="education-list">
+                    <!-- Динамикаар нэмэгдэнэ -->
+                </div>
+                <button id="add-education">Боловсрол нэмэх</button>
+            </div>
+            
+            <div class="edit-section">
+                <h3>Ажлын туршлага</h3>
+                <div id="experience-list">
+                    <!-- Динамикаар нэмэгдэнэ -->
+                </div>
+                <button id="add-experience">Туршлага нэмэх</button>
+            </div>
+            
+            <div class="edit-section">
+                <h3>Ур чадварууд</h3>
+                <div id="skills-list">
+                    <!-- Динамикаар нэмэгдэнэ -->
+                </div>
+                <button id="add-skill">Ур чадвар нэмэх</button>
+            </div>
+            
+            <button id="save-all">Бүгдийг хадгалах</button>
+        </div>
+    </div>
+
+    <div class="container" id="cv-container">
+        <header>
+            <button id="admin-login-btn" class="admin-btn">Админ</button>
+            <div class="profile">
+                <img id="profile-image" src="https://via.placeholder.com/150" alt="Профайл зураг">
+                <div class="profile-info">
+                    <h1 id="name">Баатарсүх Төрболд</h1>
+                    <h2 id="title">Программ Хангамжийн Инженер</h2>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> <span id="email">turboldbaatarsuh791@gmail.com</span></p>
+                        <p><i class="fas fa-phone"></i> <span id="phone">+976 86164216</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span id="address">Улаанбаатар, Монгол</span></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <section class="about">
+                <h2>Миний тухай</h2>
+                <p id="about-text">Их Засаг Их Сургуулийг төгссөн, 3 жилийн ажлын туршлагатай. Вэб системийн хөгжүүлэлт, мобайл аппликэйшн, систем хөгжүүлэлтийн чиглэлээр мэргэшсэн. JavaScript, React, Node.js, MongoDB, Python зэрэг технологиудтай ажиллах туршлагатай.</p>
+            </section>
+            
+            <section class="education">
+                <h2>Боловсрол</h2>
+                <div id="education-container">
+                    <div class="education-item">
+                        <h3>Их Засаг Их Сургууль</h3>
+                        <p class="date">2016 - 2020</p>
+                        <p>Компьютерийн ухаан, Програм хангамж</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Онлайн сургалт - Udemy</h3>
+                        <p class="date">2021</p>
+                        <p>Бүрэн стек веб хөгжүүлэлт (MERN)</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="experience">
+                <h2>Ажлын туршлага</h2>
+                <div id="experience-container">
+                    <div class="experience-item">
+                        <h3>Ахлах Програм Хангамжийн Инженер</h3>
+                        <p class="company">MCS Группын Интерактив ХХК</p>
+                        <p class="date">2022 - Одоог хүртэл</p>
+                        <p>Вэб аппликейшн хөгжүүлэлт, багийн удирдлага, шинэ технологиудын судалгаа, хэрэгжүүлэлт.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Програм Хангамжийн Инженер</h3>
+                        <p class="company">Юнител ХХК</p>
+                        <p class="date">2020 - 2022</p>
+                        <p>Мобайл аппликейшн хөгжүүлэлт, API боловсруулалт, систем интеграци.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="skills">
+                <h2>Ур чадварууд</h2>
+                <div id="skills-container" class="skills-grid">
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">HTML5/CSS3</div>
+                    <div class="skill-item">React.js</div>
+                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">MongoDB</div>
+                    <div class="skill-item">Express.js</div>
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">RESTful API</div>
+                    <div class="skill-item">SQL</div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; <span id="current-year"></span> Баатарсүх Төрболд. Бүх эрх хуулиар хамгаалагдсан.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
